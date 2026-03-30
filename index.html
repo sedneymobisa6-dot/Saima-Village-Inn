@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saima Village Inn – Order Online | Kisii</title>
+<meta name="description" content="Order fresh local Kenyan meals online from Saima Village Inn, Prison Road Kisii. Pay via M-Pesa. Open 8AM–8PM daily."/>
+<meta name="keywords" content="restaurant Kisii, order food online Kisii, Saima Village Inn, nyama choma Kisii, M-Pesa food Kisii"/>
+<link rel="canonical" href="https://saimavillageinn.co.ke/"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Saima Village Inn","address":{"@type":"PostalAddress","streetAddress":"Prison Road, Next to Kisii Main Prison","addressLocality":"Kisii","addressRegion":"Kisii County","addressCountry":"KE"},"telephone":"+254727749187","openingHours":"Mo-Su 08:00-20:00","servesCuisine":"Kenyan","priceRange":"KSh","hasMenu":"https://saimavillageinn.co.ke/#menu"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══ TOKENS ════════════════════════════════════════════ */
+:root {
+  --ink:        #0F0A04;
+  --ink-mid:    #1E1208;
+  --bark:       #3D1F0A;
+  --ember:      #7A3410;
+  --terracotta: #B5490F;
+  --gold:       #C8951E;
+  --gold-lt:    #E6B84A;
+  --gold-pale:  #F5E4B0;
+  --cream:      #FBF6ED;
+  --cream-dk:   #F0E6D2;
+  --stone:      #D4C4A8;
+  --text:       #1E1208;
+  --text-mid:   #5C3D20;
+  --text-muted: #9C7B55;
+  --white:      #FFFFFF;
+  --green:      #16A34A;
+  --green-lt:   #22C55E;
+  --red:        #DC2626;
+  --shadow:     0 24px 64px rgba(15,10,4,.18);
+  --shadow-sm:  0 4px 16px rgba(15,10,4,.10);
+  --r:          14px;
+  --r-sm:       8px;
+  --head:       'Cormorant Garamond', Georgia, serif;
+  --body:       'DM Sans', sans-serif;
+  --ease:       cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--body);background:var(--cream);color:var(--text);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:var(--body);border:none;outline:none}
+input,select,textarea{font-family:var(--body)}
+
+/* ═══ UTILITY ════════════════════════════════════════════ */
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.sec{padding:88px 0}
+.lbl{font-size:.7rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
+.h2{font-family:var(--head);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;color:var(--bark);line-height:1.15;margin-bottom:18px}
+.sub{font-size:1rem;color:var(--text-mid);max-width:560px;line-height:1.75}
+.bar{width:52px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:50px;font-size:.87rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:all .28s var(--ease);cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,149,30,.35)}
+.btn-dark{background:var(--bark);color:var(--gold-lt)}
+.btn-dark:hover{background:var(--ember);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.5)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+.btn-wa{background:#22C55E;color:var(--white)}
+.btn-wa:hover{background:#16A34A;transform:translateY(-2px)}
+.btn svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
+.fade{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.fade.in{opacity:1;transform:none}
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+.nav{position:fixed;inset:0 0 auto;z-index:900;padding:18px 0;transition:padding .3s var(--ease),background .3s var(--ease)}
+.nav.scrolled{padding:10px 0;background:rgba(15,10,4,.94);backdrop-filter:blur(14px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:var(--head);font-size:1.4rem;color:var(--gold-lt);font-weight:700;letter-spacing:.02em;flex-shrink:0}
+.logo em{font-style:italic;color:var(--white)}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold-lt)}
+.nav-cta{background:var(--gold);color:var(--ink)!important;padding:8px 18px;border-radius:50px;font-weight:700!important}
+.nav-cta:hover{background:var(--gold-lt)!important}
+.cart-btn{position:relative;background:rgba(200,149,30,.18);border:1.5px solid var(--gold);border-radius:50px;padding:8px 18px;display:flex;align-items:center;gap:8px;color:var(--gold-lt);font-size:.82rem;font-weight:700;letter-spacing:.05em;transition:all .25s var(--ease)}
+.cart-btn:hover{background:var(--gold);color:var(--ink)}
+.cart-badge{background:var(--terracotta);color:var(--white);font-size:.65rem;font-weight:800;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-6px;right:-6px;display:none}
+.cart-badge.show{display:flex}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold-lt);border-radius:2px;transition:.3s}
+.mob-menu{display:none;flex-direction:column;background:var(--ink);padding:16px 22px 24px;gap:4px}
+.mob-menu a{color:rgba(255,255,255,.8);font-size:.95rem;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.mob-menu.open{display:flex}
+
+/* ═══ HERO ════════════════════════════════════════════════ */
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(145deg,rgba(15,10,4,.8) 0%,rgba(61,31,10,.65) 55%,rgba(15,10,4,.88) 100%),url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=85') center/cover no-repeat;animation:kzoom 14s ease-in-out infinite alternate}
+@keyframes kzoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-bg::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:120px 22px 80px;max-width:780px}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,149,30,.4);border-radius:50px;padding:6px 16px;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:28px;backdrop-filter:blur(4px)}
+.hero-pill span{width:7px;height:7px;border-radius:50%;background:var(--green-lt);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-title{font-family:var(--head);font-size:clamp(3.5rem,11vw,7.5rem);line-height:1;color:var(--white);font-weight:700;margin-bottom:10px;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.hero-title em{display:block;color:var(--gold-lt);font-style:italic;font-size:.65em}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.15rem);color:rgba(255,255,255,.8);margin:22px 0 44px;font-weight:300;letter-spacing:.02em;max-width:500px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;animation:bob 2.5s ease-in-out infinite}
+.hero-scroll::after{content:'';display:block;width:1px;height:38px;background:rgba(255,255,255,.25)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* ═══ RIBBON ══════════════════════════════════════════════ */
+.ribbon{background:var(--bark);padding:18px 0;overflow:hidden}
+.ribbon-track{display:flex;gap:60px;white-space:nowrap;animation:marquee 22s linear infinite}
+.ribbon-item{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);flex-shrink:0}
+.ribbon-dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ ABOUT ═══════════════════════════════════════════════ */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-img-stack{position:relative;padding:20px 20px 40px 0}
+.about-img-main{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.about-img-sub{position:absolute;bottom:-20px;right:-10px;width:48%;aspect-ratio:1;object-fit:cover;border-radius:var(--r-sm);border:4px solid var(--white);box-shadow:var(--shadow-sm)}
+.about-badge{position:absolute;top:32px;left:-14px;background:var(--gold);color:var(--ink);font-family:var(--head);font-size:.85rem;font-weight:700;padding:10px 18px;border-radius:var(--r-sm);box-shadow:var(--shadow-sm)}
+.about-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:36px;padding-top:32px;border-top:1px solid var(--cream-dk)}
+.stat .n{font-family:var(--head);font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1}
+.stat .l{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+
+/* ═══ MENU + ORDER ════════════════════════════════════════ */
+.menu-sec{background:var(--cream)}
+.menu-header{text-align:center;margin-bottom:52px}
+.menu-header .bar{margin:0 auto 28px}
+.menu-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+.tab{padding:9px 20px;border-radius:50px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--text-mid);border:2px solid var(--cream-dk);transition:all .25s var(--ease)}
+.tab.on,.tab:hover{background:var(--bark);color:var(--gold-lt);border-color:var(--bark)}
+.panel{display:none;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.panel.on{display:grid}
+
+.item-card{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(15,10,4,.07);border:1px solid rgba(200,149,30,.1);transition:all .28s var(--ease);display:flex;flex-direction:column}
+.item-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.item-img{width:100%;height:170px;object-fit:cover;background:var(--cream-dk)}
+.item-img-placeholder{width:100%;height:170px;background:linear-gradient(135deg,var(--cream-dk),var(--stone));display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+.item-body{padding:18px 18px 14px;flex:1;display:flex;flex-direction:column;gap:6px}
+.item-name{font-family:var(--head);font-size:1.1rem;font-weight:600;color:var(--bark)}
+.item-desc{font-size:.82rem;color:var(--text-muted);line-height:1.6;flex:1}
+.item-footer{padding:0 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.item-price{font-family:var(--head);font-size:1.15rem;font-weight:700;color:var(--gold)}
+.add-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;background:var(--bark);color:var(--gold-lt);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .22s var(--ease);border:none;cursor:pointer}
+.add-btn:hover{background:var(--gold);color:var(--ink);transform:scale(1.04)}
+.add-btn svg{width:14px;height:14px;fill:currentColor}
+
+/* ═══ CART DRAWER ═════════════════════════════════════════ */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.overlay.show{opacity:1;pointer-events:all}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:min(420px,100vw);background:var(--white);z-index:1101;transform:translateX(100%);transition:transform .38s var(--ease);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.2)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{padding:24px 22px;border-bottom:1px solid var(--cream-dk);display:flex;align-items:center;justify-content:space-between}
+.cart-head h3{font-family:var(--head);font-size:1.4rem;color:var(--bark)}
+.cart-close{width:36px;height:36px;border-radius:50%;background:var(--cream-dk);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--text-mid);transition:.2s}
+.cart-close:hover{background:var(--cream);color:var(--red)}
+.cart-items{flex:1;overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--text-muted);font-size:.95rem}
+.cart-empty .big{font-size:3rem;margin-bottom:12px}
+.ci{display:flex;gap:14px;align-items:center;background:var(--cream);border-radius:var(--r-sm);padding:12px 14px}
+.ci-info{flex:1}
+.ci-name{font-weight:700;font-size:.9rem;color:var(--bark)}
+.ci-price{font-size:.82rem;color:var(--text-muted);margin-top:2px}
+.ci-qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-btn{width:26px;height:26px;border-radius:50%;border:none;cursor:pointer;font-size.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;transition:.2s}
+.qty-btn.minus{background:var(--cream-dk);color:var(--text-mid)}
+.qty-btn.minus:hover{background:var(--red);color:var(--white)}
+.qty-btn.plus{background:var(--bark);color:var(--gold-lt)}
+.qty-btn.plus:hover{background:var(--gold);color:var(--ink)}
+.qty-num{font-weight:700;font-size:.9rem;min-width:20px;text-align:center}
+.cart-foot{padding:22px;border-top:1px solid var(--cream-dk)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.cart-total-label{font-size:.82rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.cart-total-val{font-family:var(--head);font-size:1.6rem;font-weight:700;color:var(--bark)}
+.cart-total-val small{font-size:.75rem;color:var(--text-muted);font-family:var(--body);font-weight:400}
+
+/* ═══ CHECKOUT MODAL ══════════════════════════════════════ */
+.modal-bg{position:fixed;inset:0;background:rgba(15,10,4,.75);z-index:1200;display:none;align-items:flex-end;justify-content:center;padding:0}
+.modal-bg.show{display:flex}
+.modal{background:var(--white);width:min(540px,100vw);max-height:92svh;border-radius:var(--r) var(--r) 0 0;overflow-y:auto;padding:32px 28px 40px;position:relative;animation:slideUp .38s var(--ease)}
+@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+.modal-close{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;background:var(--cream-dk);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:var(--text-mid)}
+.modal-close:hover{background:var(--red);color:var(--white)}
+.modal h3{font-family:var(--head);font-size:1.6rem;color:var(--bark);margin-bottom:6px}
+.modal p.hint{font-size:.85rem;color:var(--text-muted);margin-bottom:24px}
+.step-dots{display:flex;gap:8px;margin-bottom:28px}
+.step-dot{width:28px;height:4px;border-radius:2px;background:var(--cream-dk);transition:.3s}
+.step-dot.on{background:var(--gold)}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.fl{font-size:.72rem;font-weight:700;color:var(--text-mid);letter-spacing:.1em;text-transform:uppercase}
+.fi,.fs,.fta{padding:12px 15px;border:2px solid var(--cream-dk);border-radius:var(--r-sm);font-size:.92rem;color:var(--text);background:var(--cream);transition:border-color .2s;outline:none;width:100%}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--gold)}
+.fta{resize:vertical;min-height:80px}
+.fs{appearance:none}
+.radio-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.radio-card{border:2px solid var(--cream-dk);border-radius:var(--r-sm);padding:14px;cursor:pointer;transition:.25s;text-align:center}
+.radio-card.sel,.radio-card:hover{border-color:var(--gold);background:var(--gold-pale)}
+.radio-card .icon{font-size:1.6rem;margin-bottom:4px}
+.radio-card .label{font-size:.85rem;font-weight:700;color:var(--bark)}
+.radio-card .sub{font-size:.75rem;color:var(--text-muted)}
+/* mpesa step */
+.mpesa-box{background:linear-gradient(135deg,#00A651,#007A3D);color:var(--white);border-radius:var(--r);padding:28px;text-align:center;margin-bottom:24px}
+.mpesa-logo{font-size:1.5rem;font-weight:800;letter-spacing:.05em;margin-bottom:6px}
+.mpesa-box .amount{font-family:var(--head);font-size:2.6rem;font-weight:700;margin:10px 0}
+.mpesa-box .till-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
+.mpesa-box .till-num{font-size:2rem;font-weight:800;letter-spacing:.1em;background:rgba(255,255,255,.15);border-radius:var(--r-sm);padding:8px 20px;display:inline-block;margin-bottom:14px}
+.mpesa-steps{background:var(--cream);border-radius:var(--r-sm);padding:16px 18px;margin-bottom:20px;text-align:left}
+.mpesa-steps li{font-size:.84rem;color:var(--text-mid);margin-bottom:6px;padding-left:20px;position:relative}
+.mpesa-steps li::before{content:counter(step);counter-increment:step;position:absolute;left:0;top:0;width:16px;height:16px;background:var(--gold);color:var(--ink);border-radius:50%;font-size:.65rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.mpesa-steps{counter-reset:step}
+.order-ref{background:var(--bark);color:var(--gold-lt);font-family:monospace;font-size:1.1rem;font-weight:700;letter-spacing:.12em;text-align:center;padding:12px;border-radius:var(--r-sm);margin-bottom:20px}
+/* success */
+.success-view{text-align:center;padding:24px 0}
+.success-icon{font-size:4rem;margin-bottom:16px}
+.success-view h3{font-family:var(--head);font-size:1.8rem;color:var(--bark);margin-bottom:8px}
+.success-view p{color:var(--text-mid);font-size:.93rem;margin-bottom:24px}
+
+/* ═══ BOOKING ═════════════════════════════════════════════ */
+.booking-sec{background:var(--ink);position:relative;overflow:hidden}
+.booking-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,149,30,.08),transparent 65%);pointer-events:none}
+.booking-sec .h2{color:var(--gold-lt)}
+.booking-sec .lbl{color:var(--gold)}
+.booking-sec .bar{background:linear-gradient(90deg,var(--gold),transparent)}
+.booking-sec .sub{color:rgba(255,255,255,.6)}
+.bk-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:64px;align-items:start}
+.bk-perks{display:flex;flex-direction:column;gap:24px;margin-top:36px}
+.bk-perk{display:flex;gap:16px;align-items:flex-start}
+.bk-perk-icon{width:44px;height:44px;border-radius:10px;background:rgba(200,149,30,.12);border:1px solid rgba(200,149,30,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bk-perk-icon svg{width:20px;height:20px;fill:var(--gold)}
+.bk-perk-text strong{display:block;color:var(--gold-lt);font-size:.87rem;margin-bottom:2px}
+.bk-perk-text span{font-size:.83rem;color:rgba(255,255,255,.55)}
+.bk-form{background:var(--cream);border-radius:var(--r);padding:36px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.full{grid-column:1/-1}
+.bk-success{display:none;text-align:center;padding:32px}
+.bk-success svg{width:54px;height:54px;fill:var(--green-lt);margin:0 auto 14px}
+.bk-success h3{font-family:var(--head);font-size:1.5rem;color:var(--bark);margin-bottom:8px}
+.bk-success p{color:var(--text-mid);font-size:.9rem}
+
+/* ═══ REVIEWS ══════════════════════════════════════════════ */
+.reviews-sec{background:var(--white)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:22px}
+.rev-card{background:var(--cream);border-radius:var(--r);padding:26px;border:1px solid var(--cream-dk);transition:.28s var(--ease)}
+.rev-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.stars{color:var(--gold);font-size:.95rem;letter-spacing:2px;margin-bottom:12px}
+.rev-text{font-size:.9rem;color:var(--text-mid);font-style:italic;line-height:1.75;margin-bottom:16px}
+.rev-author{display:flex;align-items:center;gap:12px}
+.rev-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--bark),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:.95rem;color:var(--white);font-weight:700;flex-shrink:0}
+.rev-name{font-weight:700;font-size:.85rem;color:var(--bark)}
+.rev-loc{font-size:.76rem;color:var(--text-muted)}
+
+/* ═══ LOCATION ═════════════════════════════════════════════ */
+.loc-sec{background:var(--cream)}
+.loc-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:52px;align-items:center}
+.loc-items{display:flex;flex-direction:column;gap:20px}
+.loc-item{display:flex;gap:16px;align-items:flex-start}
+.loc-icon{width:44px;height:44px;background:var(--bark);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.loc-icon svg{width:20px;height:20px;fill:var(--gold)}
+.loc-item strong{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:3px}
+.loc-item span{font-size:.95rem;font-weight:600;color:var(--text)}
+.map-wrap{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+
+/* ═══ CONTACT ══════════════════════════════════════════════ */
+.contact-sec{background:var(--bark);position:relative;overflow:hidden}
+.contact-sec .h2{color:var(--gold-lt)}
+.contact-sec .lbl{color:var(--gold)}
+.contact-sec .bar{background:linear-gradient(90deg,var(--gold),transparent)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+.cta-btns{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.cta-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:var(--r-sm);transition:.25s var(--ease);text-decoration:none}
+.cta-btn-call{background:rgba(200,149,30,.12);border:2px solid var(--gold);color:var(--gold-lt)}
+.cta-btn-call:hover{background:var(--gold);color:var(--ink)}
+.cta-btn-wa{background:rgba(34,197,94,.1);border:2px solid #22C55E;color:#4ADE80}
+.cta-btn-wa:hover{background:#22C55E;color:var(--white)}
+.cta-btn svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}
+.cta-btn-lbl small{display:block;font-size:.7rem;opacity:.65;margin-bottom:2px}
+.cta-btn-lbl strong{font-size:.95rem;font-weight:700}
+.hrs{margin-top:28px}
+.hrs-title{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.hrs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+.hrs-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.83rem}
+.hrs-row span:first-child{color:rgba(255,255,255,.55)}
+.hrs-row span:last-child{color:var(--gold-lt);font-weight:600}
+.cf-title{font-family:var(--head);font-size:1.35rem;color:var(--white);margin-bottom:4px}
+.cf-sub{font-size:.83rem;color:rgba(255,255,255,.5);margin-bottom:20px}
+.cf{display:flex;flex-direction:column;gap:12px}
+.cf .fi,.cf .fta{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:var(--white)}
+.cf .fi::placeholder,.cf .fta::placeholder{color:rgba(255,255,255,.3)}
+.cf .fi:focus,.cf .fta:focus{border-color:var(--gold)}
+.cf-ok{display:none;background:rgba(34,197,94,.12);border:1px solid #22C55E;border-radius:var(--r-sm);padding:14px;color:#4ADE80;font-size:.88rem;margin-bottom:8px}
+
+/* ═══ FOOTER ═══════════════════════════════════════════════ */
+.footer{background:var(--ink);padding:32px 0;text-align:center;font-size:.8rem;color:rgba(255,255,255,.4)}
+.footer strong{color:var(--gold-lt)}
+.footer a{color:var(--gold)}
+
+/* ═══ FABS ════════════════════════════════════════════════ */
+.fabs{position:fixed;right:18px;bottom:24px;z-index:800;display:flex;flex-direction:column;gap:11px;align-items:flex-end}
+.fab{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.28);transition:transform .25s var(--ease)}
+.fab:hover{transform:scale(1.12) translateY(-2px)}
+.fab-wa{background:#22C55E}
+.fab-call{background:var(--gold)}
+.fab svg{width:22px;height:22px;fill:var(--white)}
+.fab-call svg{fill:var(--ink)}
+
+/* ═══ RESPONSIVE ══════════════════════════════════════════ */
+@media(max-width:900px){
+  .about-grid,.bk-grid,.loc-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .about-img-stack{padding:0 0 50px}
+  .about-badge{left:10px}
+  .fg2{grid-template-columns:1fr}
+  .bk-form{padding:24px}
+  .hrs-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .sec{padding:60px 0}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{justify-content:center}
+  .menu-tabs{gap:6px}
+  .tab{padding:7px 13px;font-size:.72rem}
+  .panel{grid-template-columns:1fr}
+  .radio-row{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ██ NAV ██ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">Saima <em>Village Inn</em></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#loc">Location</a></li>
+      <li><a href="#booking">Book Table</a></li>
+      <li><a href="#menu" class="nav-cta">Order Online</a></li>
+    </ul>
+    <button class="cart-btn" onclick="toggleCart()">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-9.8-3h11.4c.8 0 1.5-.4 1.8-1.1L22 6.5c.2-.4-.1-.5-.4-.5H5.2L4.3 4H1v2h2l3.6 7.6L5.3 16H19v-2H6.4l-.2-1z"/></svg>
+      Cart
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <button class="hamburger" id="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <a href="#about" onclick="closeMob()">About</a>
+    <a href="#menu" onclick="closeMob()">Menu / Order</a>
+    <a href="#reviews" onclick="closeMob()">Reviews</a>
+    <a href="#loc" onclick="closeMob()">Location</a>
+    <a href="#booking" onclick="closeMob()">Book a Table</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+    <a href="javascript:void(0)" onclick="closeMob();toggleCart()">🛒 View Cart</a>
+  </div>
+</nav>
+
+<!-- ██ HERO ██ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><span></span>Open Now · 8AM – 8PM Daily</div>
+    <h1 class="hero-title">Saima<em>Village Inn</em></h1>
+    <p class="hero-sub">Fresh Kenyan meals served with heart. Order online for pickup or dine in with us along Prison Road, Kisii.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-gold">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-9.8-3h11.4c.8 0 1.5-.4 1.8-1.1L22 6.5c.2-.4-.1-.5-.4-.5H5.2L4.3 4H1v2h2l3.6 7.6L5.3 16H19v-2H6.4l-.2-1z"/></svg>
+        Order Online
+      </a>
+      <a href="#booking" class="btn btn-outline">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v16l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg>
+        Book a Table
+      </a>
+      <a href="https://wa.me/254727749187?text=Hello%20Saima%20Village%20Inn!" target="_blank" class="btn btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.07a8.15 8.15 0 01-2.4-1.47c-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12 0C5.37 0 0 5.37 0 12c0 2.13.56 4.13 1.54 5.87L.06 23.52a.5.5 0 00.61.61l5.61-1.49C7.87 23.44 9.87 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm0 22a9.94 9.94 0 01-5.12-1.42l-.37-.22-3.8 1.01 1.02-3.73-.24-.39A9.94 9.94 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ██ RIBBON ██ -->
+<div class="ribbon">
+  <div class="ribbon-track" id="ribbon">
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Fresh Local Ingredients</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Order Online · Pay M-Pesa</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Pickup or Dine In</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Open 7 Days a Week</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Kisii's Home Kitchen</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Nyama Choma Specialists</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Fresh Local Ingredients</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Order Online · Pay M-Pesa</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Pickup or Dine In</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Open 7 Days a Week</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Kisii's Home Kitchen</span>
+    <span class="ribbon-item"><span class="ribbon-dot"></span>Nyama Choma Specialists</span>
+  </div>
+</div>
+
+<!-- ██ ABOUT ██ -->
+<section class="about sec" id="about">
+  <div class="wrap">
+    <div class="about-grid fade">
+      <div class="about-img-stack">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80" alt="Fresh Kenyan food" class="about-img-main" loading="lazy"/>
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Nyama choma grills" class="about-img-sub" loading="lazy"/>
+        <div class="about-badge">Since Day One · Kisii</div>
+      </div>
+      <div>
+        <span class="lbl">Our Story</span>
+        <h2 class="h2">A Taste of Home, Every Single Day</h2>
+        <div class="bar"></div>
+        <p class="sub">Saima Village Inn sits along Prison Road, next to Kisii Main Prison — a spot known to the whole town. We serve freshly prepared local Kenyan meals in a relaxed, friendly environment ideal for individuals, families, and work groups.</p>
+        <p style="margin-top:16px;color:var(--text-mid);font-size:.95rem;line-height:1.8">From morning mandazi and chai to evening nyama choma off the grill, every dish is made from fresh, locally sourced ingredients. No shortcuts. No freezers. Just honest food, made daily.</p>
+        <div class="about-stats">
+          <div class="stat"><div class="n">8AM</div><div class="l">Opens Daily</div></div>
+          <div class="stat"><div class="n">8PM</div><div class="l">Last Orders</div></div>
+          <div class="stat"><div class="n">7 Days</div><div class="l">Every Week</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ MENU + ORDER ██ -->
+<section class="menu-sec sec" id="menu">
+  <div class="wrap">
+    <div class="menu-header fade">
+      <span class="lbl">Fresh Daily</span>
+      <h2 class="h2">Our Menu</h2>
+      <div class="bar"></div>
+      <p class="sub" style="margin:0 auto">Click <strong>Add to Order</strong> on any item to build your order. Pay via M-Pesa at checkout. <em style="color:var(--text-muted);font-size:.85rem">Sample prices shown — confirm with staff on call.</em></p>
+    </div>
+
+    <div class="menu-tabs fade">
+      <button class="tab on" onclick="showTab('breakfast',this)">🌅 Breakfast</button>
+      <button class="tab" onclick="showTab('lunch',this)">🍛 Lunch</button>
+      <button class="tab" onclick="showTab('nyama',this)">🔥 Nyama Choma</button>
+      <button class="tab" onclick="showTab('local',this)">🫘 Local Dishes</button>
+      <button class="tab" onclick="showTab('drinks',this)">🥤 Beverages</button>
+    </div>
+
+    <!-- BREAKFAST -->
+    <div class="panel on" id="tab-breakfast">
+      <div class="item-card"><div class="item-img-placeholder">🥞</div><div class="item-body"><span class="item-name">Mandazi & Chai</span><span class="item-desc">Freshly fried mandazi with hot spiced milk tea</span></div><div class="item-footer"><span class="item-price">KSh 80</span><button class="add-btn" onclick="addToCart('Mandazi & Chai',80)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🫓</div><div class="item-body"><span class="item-name">Chapati & Beans</span><span class="item-desc">Soft homemade chapati with slow-cooked beans</span></div><div class="item-footer"><span class="item-price">KSh 120</span><button class="add-btn" onclick="addToCart('Chapati & Beans',120)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍵</div><div class="item-body"><span class="item-name">Uji wa Wimbi</span><span class="item-desc">Warm millet porridge, lightly sweetened</span></div><div class="item-footer"><span class="item-price">KSh 60</span><button class="add-btn" onclick="addToCart('Uji wa Wimbi',60)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍳</div><div class="item-body"><span class="item-name">Eggs & Bread</span><span class="item-desc">Fried or boiled eggs served with sliced bread</span></div><div class="item-footer"><span class="item-price">KSh 100</span><button class="add-btn" onclick="addToCart('Eggs & Bread',100)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+    </div>
+
+    <!-- LUNCH -->
+    <div class="panel" id="tab-lunch">
+      <div class="item-card"><div class="item-img-placeholder">🌿</div><div class="item-body"><span class="item-name">Ugali & Sukuma Wiki</span><span class="item-desc">Classic ugali with fresh sautéed kale</span></div><div class="item-footer"><span class="item-price">KSh 150</span><button class="add-btn" onclick="addToCart('Ugali & Sukuma Wiki',150)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍚</div><div class="item-body"><span class="item-name">Rice & Beef Stew</span><span class="item-desc">Steamed white rice with slow-cooked beef stew</span></div><div class="item-footer"><span class="item-price">KSh 200</span><button class="add-btn" onclick="addToCart('Rice & Beef Stew',200)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🐟</div><div class="item-body"><span class="item-name">Fried Tilapia</span><span class="item-desc">Fresh tilapia fried to crisp perfection with kachumbari</span></div><div class="item-footer"><span class="item-price">KSh 350</span><button class="add-btn" onclick="addToCart('Fried Tilapia',350)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🌽</div><div class="item-body"><span class="item-name">Githeri Special</span><span class="item-desc">Maize & beans mix cooked village-style with vegetables</span></div><div class="item-footer"><span class="item-price">KSh 130</span><button class="add-btn" onclick="addToCart('Githeri Special',130)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+    </div>
+
+    <!-- NYAMA -->
+    <div class="panel" id="tab-nyama">
+      <div class="item-card"><div class="item-img-placeholder">🥩</div><div class="item-body"><span class="item-name">Nyama Choma — Beef</span><span class="item-desc">Slow-grilled beef, seasoned & charred to perfection (per ½kg)</span></div><div class="item-footer"><span class="item-price">KSh 500</span><button class="add-btn" onclick="addToCart('Nyama Choma Beef ½kg',500)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🐐</div><div class="item-body"><span class="item-name">Nyama Choma — Goat</span><span class="item-desc">Tender goat ribs roasted village-style (per ½kg)</span></div><div class="item-footer"><span class="item-price">KSh 600</span><button class="add-btn" onclick="addToCart('Nyama Choma Goat ½kg',600)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍗</div><div class="item-body"><span class="item-name">Kuku Choma</span><span class="item-desc">Whole flame-grilled chicken with kachumbari and ugali</span></div><div class="item-footer"><span class="item-price">KSh 900</span><button class="add-btn" onclick="addToCart('Kuku Choma (Whole)',900)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍢</div><div class="item-body"><span class="item-name">Mixed Grill Platter</span><span class="item-desc">Beef + goat mix with kachumbari, ugali & roasted veggies</span></div><div class="item-footer"><span class="item-price">KSh 1,200</span><button class="add-btn" onclick="addToCart('Mixed Grill Platter',1200)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+    </div>
+
+    <!-- LOCAL -->
+    <div class="panel" id="tab-local">
+      <div class="item-card"><div class="item-img-placeholder">🥔</div><div class="item-body"><span class="item-name">Mukimo</span><span class="item-desc">Pounded potatoes with peas, maize, and greens</span></div><div class="item-footer"><span class="item-price">KSh 180</span><button class="add-btn" onclick="addToCart('Mukimo',180)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🫀</div><div class="item-body"><span class="item-name">Matumbo</span><span class="item-desc">Slow-cooked beef offal in rich tomato-onion sauce</span></div><div class="item-footer"><span class="item-price">KSh 200</span><button class="add-btn" onclick="addToCart('Matumbo',200)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🫘</div><div class="item-body"><span class="item-name">Maharagwe</span><span class="item-desc">Red kidney beans in spiced coconut sauce</span></div><div class="item-footer"><span class="item-price">KSh 150</span><button class="add-btn" onclick="addToCart('Maharagwe',150)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🐟</div><div class="item-body"><span class="item-name">Obuya (Omena)</span><span class="item-desc">Lake omena fried with onions, tomatoes & coriander</span></div><div class="item-footer"><span class="item-price">KSh 130</span><button class="add-btn" onclick="addToCart('Omena (Obuya)',130)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="panel" id="tab-drinks">
+      <div class="item-card"><div class="item-img-placeholder">☕</div><div class="item-body"><span class="item-name">Kenyan Chai</span><span class="item-desc">Spiced milk tea, freshly brewed</span></div><div class="item-footer"><span class="item-price">KSh 50</span><button class="add-btn" onclick="addToCart('Kenyan Chai',50)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍹</div><div class="item-body"><span class="item-name">Fresh Fruit Juice</span><span class="item-desc">Seasonal tropical blends — ask for today's flavour</span></div><div class="item-footer"><span class="item-price">KSh 100</span><button class="add-btn" onclick="addToCart('Fresh Fruit Juice',100)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🥤</div><div class="item-body"><span class="item-name">Soda / Water</span><span class="item-desc">Chilled soft drinks and bottled water</span></div><div class="item-footer"><span class="item-price">KSh 70</span><button class="add-btn" onclick="addToCart('Soda / Water',70)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+      <div class="item-card"><div class="item-img-placeholder">🍺</div><div class="item-body"><span class="item-name">Local Brew</span><span class="item-desc">Traditional fermented grain drink (seasonal)</span></div><div class="item-footer"><span class="item-price">KSh 80</span><button class="add-btn" onclick="addToCart('Local Brew',80)"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>Add</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CART DRAWER ██ -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="big">🛒</div><p>Your cart is empty.<br>Add items from the menu above.</p></div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cartTotal">KSh 0 <small>(excl. any extras)</small></span>
+    </div>
+    <button class="btn btn-gold" style="width:100%;justify-content:center;border-radius:10px;padding:15px" onclick="openCheckout()">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+      Proceed to Checkout
+    </button>
+    <button style="width:100%;margin-top:10px;background:none;border:none;color:var(--text-muted);font-size:.83rem;cursor:pointer;padding:8px" onclick="clearCart()">Clear cart</button>
+  </div>
+</div>
+
+<!-- ██ CHECKOUT MODAL ██ -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <button class="modal-close" onclick="closeCheckout()">✕</button>
+
+    <!-- STEP 1: Details -->
+    <div id="step1">
+      <h3>Your Details</h3>
+      <p class="hint">Tell us who you are and how you'd like to receive your order.</p>
+      <div class="step-dots"><div class="step-dot on"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+      <div class="fg"><label class="fl">Full Name *</label><input class="fi" id="ckName" placeholder="e.g. Wanjiku Moraa" /></div>
+      <div class="fg"><label class="fl">M-Pesa Phone Number *</label><input class="fi" id="ckPhone" placeholder="+254 7XX XXX XXX" type="tel" /></div>
+      <div class="fg"><label class="fl">Order Type *</label></div>
+      <div class="radio-row">
+        <div class="radio-card sel" id="rdPickup" onclick="selectType('pickup')">
+          <div class="icon">🏃</div><div class="label">Pickup</div><div class="sub">Collect at restaurant</div>
+        </div>
+        <div class="radio-card" id="rdDine" onclick="selectType('dine')">
+          <div class="icon">🪑</div><div class="label">Dine In</div><div class="sub">Table at the inn</div>
+        </div>
+      </div>
+      <div class="fg" id="tableField" style="display:none"><label class="fl">Preferred Table / Special Seating</label><input class="fi" id="ckTable" placeholder="e.g. Outside, near the grill" /></div>
+      <div class="fg"><label class="fl">Special Instructions (optional)</label><textarea class="fta fi" id="ckNote" placeholder="Allergies, spice level, extra items…"></textarea></div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;border-radius:10px;padding:15px;margin-top:8px" onclick="goStep2()">Continue to Payment →</button>
+    </div>
+
+    <!-- STEP 2: M-Pesa -->
+    <div id="step2" style="display:none">
+      <h3>Pay via M-Pesa</h3>
+      <p class="hint">Send the exact amount to our till number below, then confirm below.</p>
+      <div class="step-dots"><div class="step-dot"></div><div class="step-dot on"></div><div class="step-dot"></div></div>
+      <div class="mpesa-box">
+        <div class="mpesa-logo">M-PESA</div>
+        <div class="till-label">Paybill / Till Number</div>
+        <div class="till-num" id="mpTill">XXXXXX</div>
+        <div style="font-size:.75rem;opacity:.75;margin-bottom:6px">Account Name: Saima Village Inn</div>
+        <div style="font-size:.9rem;opacity:.85;margin-bottom:4px">Amount to Send:</div>
+        <div class="amount" id="mpAmount">KSh 0</div>
+        <div style="font-size:.75rem;opacity:.7">Use your order reference as account number</div>
+      </div>
+      <div class="order-ref">Order Ref: <span id="orderRef">—</span></div>
+      <div class="mpesa-steps">
+        <li>Go to <strong>M-Pesa</strong> on your phone</li>
+        <li>Select <strong>Lipa na M-Pesa → Buy Goods / Paybill</strong></li>
+        <li>Enter Till Number: <strong id="mpTill2">XXXXXX</strong></li>
+        <li>Enter amount: <strong id="mpAmt2">KSh 0</strong></li>
+        <li>Enter your M-Pesa PIN and confirm</li>
+        <li>Come back here and tap <strong>"I've Paid"</strong></li>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;border-radius:10px;padding:15px;margin-bottom:12px" onclick="goStep3()">✅ I've Paid — Confirm Order</button>
+      <button style="width:100%;background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;padding:8px" onclick="goStep1()">← Go back</button>
+    </div>
+
+    <!-- STEP 3: Success -->
+    <div id="step3" style="display:none">
+      <div class="step-dots"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot on"></div></div>
+      <div class="success-view">
+        <div class="success-icon">🎉</div>
+        <h3>Order Confirmed!</h3>
+        <p>Your order has been sent to Saima Village Inn via WhatsApp. We'll call you to confirm within minutes.</p>
+        <p style="margin-top:8px;font-size:.82rem;color:var(--text-muted)">Order Ref: <strong id="confirmRef">—</strong></p>
+        <a id="waConfirm" href="#" target="_blank" class="btn btn-wa" style="margin:24px auto 0;justify-content:center">
+          <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.07a8.15 8.15 0 01-2.4-1.47c-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12 0C5.37 0 0 5.37 0 12c0 2.13.56 4.13 1.54 5.87L.06 23.52a.5.5 0 00.61.61l5.61-1.49C7.87 23.44 9.87 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm0 22a9.94 9.94 0 01-5.12-1.42l-.37-.22-3.8 1.01 1.02-3.73-.24-.39A9.94 9.94 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10z"/></svg>
+          Open WhatsApp Chat
+        </a>
+        <button class="btn btn-dark" style="margin:12px auto 0;justify-content:center" onclick="closeCheckout();clearCart()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ██ BOOKING ██ -->
+<section class="booking-sec sec" id="booking">
+  <div class="wrap">
+    <div class="bk-grid">
+      <div class="fade">
+        <span class="lbl">Reserve a Spot</span>
+        <h2 class="h2">Book a Table</h2>
+        <div class="bar"></div>
+        <p class="sub">Prefer to dine in without ordering ahead? Fill in the form and we'll hold your table. Walk-ins also welcome!</p>
+        <div class="bk-perks">
+          <div class="bk-perk">
+            <div class="bk-perk-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm.5 5v5.25l4 2.4-.75 1.27L11 13V7h1.5z"/></svg></div>
+            <div class="bk-perk-text"><strong>Open Daily 8AM – 8PM</strong><span>No days off — we're here every day of the week</span></div>
+          </div>
+          <div class="bk-perk">
+            <div class="bk-perk-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="bk-perk-text"><strong>Groups Welcome</strong><span>We accommodate families, work teams and group events</span></div>
+          </div>
+          <div class="bk-perk">
+            <div class="bk-perk-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div>
+            <div class="bk-perk-text"><strong>+254 727 749187</strong><span>Call or WhatsApp us directly anytime</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-form fade" id="bkFormWrap">
+        <div class="fg2" id="bkForm">
+          <div class="fg"><label class="fl">Full Name *</label><input class="fi" id="bkName" placeholder="Your full name"/></div>
+          <div class="fg"><label class="fl">Phone *</label><input class="fi" id="bkPhone" placeholder="+254 7XX XXX XXX" type="tel"/></div>
+          <div class="fg"><label class="fl">Date *</label><input class="fi" id="bkDate" type="date"/></div>
+          <div class="fg"><label class="fl">Time *</label>
+            <select class="fs fi" id="bkTime">
+              <option value="">Select…</option>
+              <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+              <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+              <option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
+              <option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl">Guests *</label>
+            <select class="fs fi" id="bkGuests">
+              <option value="">Select…</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7–10</option><option>11–20</option><option>20+</option>
+            </select>
+          </div>
+          <div class="fg full"><label class="fl">Special Request</label><textarea class="fta fi" id="bkNote" placeholder="Dietary needs, occasion, preferred seating…"></textarea></div>
+          <div class="full"><button class="btn btn-gold" style="width:100%;justify-content:center;border-radius:10px;padding:15px;font-size:.92rem" onclick="submitBooking()">Confirm Reservation →</button></div>
+        </div>
+        <div class="bk-success" id="bkSuccess">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <h3>Reservation Received!</h3>
+          <p>We'll contact you on the number provided to confirm your table. See you soon! 🍽️</p>
+          <a href="https://wa.me/254727749187" target="_blank" class="btn btn-wa" style="margin:20px auto 0;justify-content:center">Also Message Us on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ REVIEWS ██ -->
+<section class="reviews-sec sec" id="reviews">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:50px" class="fade">
+      <span class="lbl">What People Say</span>
+      <h2 class="h2">Customer Reviews</h2>
+      <div class="bar" style="margin:0 auto"></div>
+    </div>
+    <div class="rev-grid fade">
+      <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"The nyama choma here is something else. Tender, well-seasoned, and the kachumbari is always fresh. Best spot on Prison Road without a doubt."</p><div class="rev-author"><div class="rev-av">JO</div><div><div class="rev-name">James Ongeri</div><div class="rev-loc">Kisii Town</div></div></div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"We brought the whole family for lunch — affordable, filling portions, and the staff are so warm. The sukuma wiki with ugali was perfect."</p><div class="rev-author"><div class="rev-av">BK</div><div><div class="rev-name">Beatrice Kemunto</div><div class="rev-loc">Nyamataro</div></div></div></div>
+      <div class="rev-card"><div class="stars">★★★★☆</div><p class="rev-text">"Good local food, cold soda, and a relaxed vibe. The kind of place Kisii needs more of. Will definitely be back with colleagues."</p><div class="rev-author"><div class="rev-av">PM</div><div><div class="rev-name">Peter Morara</div><div class="rev-loc">Kisii CBD</div></div></div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"The chapati was so soft I ordered a second round. Reasonably priced and the tea is genuine Kenyan chai. This is now my regular."</p><div class="rev-author"><div class="rev-av">FN</div><div><div class="rev-name">Faith Nyaboke</div><div class="rev-loc">Daraja Mbili</div></div></div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p class="rev-text">"Hosted a small work lunch here — they accommodated our group well and the food came out fast. Our go-to for team meals in Kisii."</p><div class="rev-author"><div class="rev-av">SO</div><div><div class="rev-name">Samuel Ochieng</div><div class="rev-loc">Kisii Government Offices</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ LOCATION ██ -->
+<section class="loc-sec sec" id="loc">
+  <div class="wrap">
+    <div class="loc-grid fade">
+      <div>
+        <span class="lbl">Find Us</span>
+        <h2 class="h2">Easy to Find, Easy to Love</h2>
+        <div class="bar"></div>
+        <div class="loc-items">
+          <div class="loc-item"><div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><strong>Address</strong><span>Prison Road, Next to Kisii Main Prison, Kisii</span></div></div>
+          <div class="loc-item"><div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div><div><strong>Phone</strong><span>+254 727 749187</span></div></div>
+          <div class="loc-item"><div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm.5 5v5.25l4 2.4-.75 1.27L11 13V7h1.5z"/></svg></div><div><strong>Hours</strong><span>8:00 AM – 8:00 PM, 7 Days a Week</span></div></div>
+        </div>
+        <a href="https://www.google.com/maps/search/Kisii+Main+Prison+Prison+Road+Kisii+Kenya" target="_blank" class="btn btn-dark" style="margin-top:24px">
+          <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.42 0l-9 9a1 1 0 000 1.42l9 9a1 1 0 001.42 0l9-9a1 1 0 000-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 011-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6490!2d34.7717!3d-0.6817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa6e78fdc5e75%3A0x4d6e0a7a4b3c2e91!2sKisii%20Prison!5e0!3m2!1sen!2ske!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Saima Village Inn map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CONTACT ██ -->
+<section class="contact-sec sec" id="contact">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:50px" class="fade">
+      <span class="lbl">Reach Us</span>
+      <h2 class="h2">Get in Touch</h2>
+      <div class="bar" style="margin:0 auto"></div>
+    </div>
+    <div class="contact-grid fade">
+      <div>
+        <div class="cta-btns">
+          <a href="tel:+254727749187" class="cta-btn cta-btn-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><div class="cta-btn-lbl"><small>Call Directly</small><strong>+254 727 749187</strong></div></a>
+          <a href="https://wa.me/254727749187?text=Hello%20Saima%20Village%20Inn!" target="_blank" class="cta-btn cta-btn-wa"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.07a8.15 8.15 0 01-2.4-1.47c-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12 0C5.37 0 0 5.37 0 12c0 2.13.56 4.13 1.54 5.87L.06 23.52a.5.5 0 00.61.61l5.61-1.49C7.87 23.44 9.87 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm0 22a9.94 9.94 0 01-5.12-1.42l-.37-.22-3.8 1.01 1.02-3.73-.24-.39A9.94 9.94 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10z"/></svg><div class="cta-btn-lbl"><small>Chat on WhatsApp</small><strong>+254 727 749187</strong></div></a>
+        </div>
+        <div class="hrs">
+          <div class="hrs-title">Business Hours</div>
+          <div class="hrs-grid">
+            <div class="hrs-row"><span>Monday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Tuesday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Wednesday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Thursday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Friday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Saturday</span><span>8AM – 8PM</span></div>
+            <div class="hrs-row"><span>Sunday</span><span>8AM – 8PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cf-title">Send a Message</div>
+        <div class="cf-sub">For group bookings, catering enquiries, or general feedback.</div>
+        <div class="cf">
+          <div class="fg"><label class="fl" style="color:rgba(255,255,255,.6)">Your Name</label><input class="fi" id="cfName" placeholder="Full name"/></div>
+          <div class="fg"><label class="fl" style="color:rgba(255,255,255,.6)">Phone or Email</label><input class="fi" id="cfContact" placeholder="+254 7XX or email@example.com"/></div>
+          <div class="fg"><label class="fl" style="color:rgba(255,255,255,.6)">Message</label><textarea class="fta fi" id="cfMsg" placeholder="How can we help?"></textarea></div>
+          <div class="cf-ok" id="cfOk">✅ Message received! We'll get back to you shortly via WhatsApp.</div>
+          <button class="btn btn-gold" style="border-radius:10px;padding:14px 24px" onclick="submitContact()">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FOOTER ██ -->
+<footer class="footer">
+  <div class="wrap">
+    <p><strong>Saima Village Inn</strong> — Prison Road, Next to Kisii Main Prison, Kisii, Kenya</p>
+    <p style="margin-top:6px">📞 <a href="tel:+254727749187">+254 727 749187</a> &nbsp;·&nbsp; Open Daily 8AM – 8PM</p>
+    <p style="margin-top:14px;opacity:.4;font-size:.75rem">© 2025 Saima Village Inn. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ██ FLOATING BTNS ██ -->
+<div class="fabs">
+  <a href="https://wa.me/254727749187?text=Hello!" target="_blank" class="fab fab-wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.16c-.17.2-.35.22-.64.07a8.15 8.15 0 01-2.4-1.47c-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12 0C5.37 0 0 5.37 0 12c0 2.13.56 4.13 1.54 5.87L.06 23.52a.5.5 0 00.61.61l5.61-1.49C7.87 23.44 9.87 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm0 22a9.94 9.94 0 01-5.12-1.42l-.37-.22-3.8 1.01 1.02-3.73-.24-.39A9.94 9.94 0 012 12C2 6.49 6.49 2 12 2s10 4.49 10 10-4.49 10-10 10z"/></svg></a>
+  <a href="tel:+254727749187" class="fab fab-call" aria-label="Call"><svg viewBox="0 0 24 24" style="fill:var(--ink)"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+</div>
+
+<!-- ██ SCRIPTS ██ -->
+<script>
+/* ── NAV ─────────────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open')}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
+
+/* ── MENU TABS ───────────────────────────────────────── */
+function showTab(id, btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('tab-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+
+/* ── CART STATE ──────────────────────────────────────── */
+let cart = JSON.parse(localStorage.getItem('svi_cart')||'[]');
+
+function saveCart(){localStorage.setItem('svi_cart',JSON.stringify(cart))}
+
+function addToCart(name, price){
+  const ex = cart.find(i=>i.name===name);
+  if(ex) ex.qty++;
+  else cart.push({name, price, qty:1});
+  saveCart(); renderCart();
+  // flash badge
+  const badge = document.getElementById('cartBadge');
+  badge.style.transform = 'scale(1.5)';
+  setTimeout(()=>badge.style.transform='',200);
+  // briefly open drawer
+  if(!document.getElementById('cartDrawer').classList.contains('open')) toggleCart();
+}
+
+function changeQty(name, delta){
+  const idx = cart.findIndex(i=>i.name===name);
+  if(idx<0) return;
+  cart[idx].qty += delta;
+  if(cart[idx].qty <= 0) cart.splice(idx,1);
+  saveCart(); renderCart();
+}
+
+function clearCart(){
+  cart=[];saveCart();renderCart();
+}
+
+function cartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
+function cartCount(){return cart.reduce((s,i)=>s+i.qty,0)}
+
+function renderCart(){
+  const el = document.getElementById('cartItems');
+  const foot = document.getElementById('cartFoot');
+  const badge = document.getElementById('cartBadge');
+  const count = cartCount();
+  badge.textContent = count;
+  badge.classList.toggle('show', count>0);
+
+  if(cart.length===0){
+    el.innerHTML='<div class="cart-empty"><div class="big">🛒</div><p>Your cart is empty.<br>Add items from the menu above.</p></div>';
+    foot.style.display='none'; return;
+  }
+  foot.style.display='block';
+  el.innerHTML = cart.map(i=>`
+    <div class="ci">
+      <div class="ci-info">
+        <div class="ci-name">${i.name}</div>
+        <div class="ci-price">KSh ${(i.price*i.qty).toLocaleString()}</div>
+        <div class="ci-qty">
+          <button class="qty-btn minus" onclick="changeQty('${i.name}',-1)">−</button>
+          <span class="qty-num">${i.qty}</span>
+          <button class="qty-btn plus" onclick="changeQty('${i.name}',1)">+</button>
+        </div>
+      </div>
+    </div>`).join('');
+  document.getElementById('cartTotal').innerHTML = `KSh ${cartTotal().toLocaleString()} <small>(excl. any extras)</small>`;
+}
+
+function toggleCart(){
+  const d=document.getElementById('cartDrawer');
+  const o=document.getElementById('overlay');
+  const open = d.classList.toggle('open');
+  o.classList.toggle('show', open);
+}
+
+/* ── CHECKOUT ────────────────────────────────────────── */
+let orderType = 'pickup';
+let currentRef = '';
+
+function selectType(t){
+  orderType=t;
+  document.getElementById('rdPickup').classList.toggle('sel',t==='pickup');
+  document.getElementById('rdDine').classList.toggle('sel',t==='dine');
+  document.getElementById('tableField').style.display = t==='dine'?'flex':'none';
+}
+
+function openCheckout(){
+  if(cart.length===0){alert('Your cart is empty!');return;}
+  toggleCart();
+  document.getElementById('modalBg').classList.add('show');
+  goStep1();
+}
+function closeCheckout(){document.getElementById('modalBg').classList.remove('show')}
+
+function goStep1(){
+  document.getElementById('step1').style.display='block';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step3').style.display='none';
+}
+
+function goStep2(){
+  const name = document.getElementById('ckName').value.trim();
+  const phone = document.getElementById('ckPhone').value.trim();
+  if(!name||!phone){alert('Please enter your name and phone number.');return;}
+  // generate ref
+  currentRef = 'SVI-'+Date.now().toString(36).toUpperCase().slice(-6);
+  const total = cartTotal();
+  const TILL = 'XXXXXX'; // ← Replace with actual M-Pesa till number
+  document.getElementById('mpTill').textContent = TILL;
+  document.getElementById('mpTill2').textContent = TILL;
+  document.getElementById('mpAmount').textContent = 'KSh '+total.toLocaleString();
+  document.getElementById('mpAmt2').textContent = 'KSh '+total.toLocaleString();
+  document.getElementById('orderRef').textContent = currentRef;
+  document.getElementById('step1').style.display='none';
+  document.getElementById('step2').style.display='block';
+}
+
+function goStep3(){
+  const name    = document.getElementById('ckName').value.trim();
+  const phone   = document.getElementById('ckPhone').value.trim();
+  const note    = document.getElementById('ckNote').value.trim();
+  const table   = document.getElementById('ckTable').value.trim();
+  const total   = cartTotal();
+  const items   = cart.map(i=>`  • ${i.qty}× ${i.name} — KSh ${(i.price*i.qty).toLocaleString()}`).join('\n');
+  const typeStr = orderType==='dine' ? `Dine In${table?' ('+table+')':''}` : 'Pickup';
+
+  const msg = encodeURIComponent(
+    `🍽️ *New Online Order — Saima Village Inn*\n\n`+
+    `📋 Ref: ${currentRef}\n`+
+    `👤 Name: ${name}\n`+
+    `📞 Phone: ${phone}\n`+
+    `📦 Type: ${typeStr}\n\n`+
+    `*Items Ordered:*\n${items}\n\n`+
+    `💰 Total: KSh ${total.toLocaleString()}\n`+
+    `📝 Note: ${note||'None'}\n\n`+
+    `✅ Customer confirms M-Pesa payment sent.`
+  );
+
+  document.getElementById('confirmRef').textContent = currentRef;
+  document.getElementById('waConfirm').href = `https://wa.me/254727749187?text=${msg}`;
+  window.open(`https://wa.me/254727749187?text=${msg}`,'_blank');
+
+  // Save order
+  const orders = JSON.parse(localStorage.getItem('svi_orders')||'[]');
+  orders.push({ref:currentRef, name, phone, type:orderType, items:cart, total, note, ts:Date.now()});
+  localStorage.setItem('svi_orders', JSON.stringify(orders));
+
+  document.getElementById('step2').style.display='none';
+  document.getElementById('step3').style.display='block';
+}
+
+/* ── BOOKING ─────────────────────────────────────────── */
+const bkDateEl = document.getElementById('bkDate');
+if(bkDateEl) bkDateEl.setAttribute('min', new Date().toISOString().split('T')[0]);
+
+function submitBooking(){
+  const name   = document.getElementById('bkName').value.trim();
+  const phone  = document.getElementById('bkPhone').value.trim();
+  const date   = document.getElementById('bkDate').value;
+  const time   = document.getElementById('bkTime').value;
+  const guests = document.getElementById('bkGuests').value;
+  const note   = document.getElementById('bkNote').value.trim();
+  if(!name||!phone||!date||!time||!guests){alert('Please fill all required fields.');return;}
+
+  const msg = encodeURIComponent(
+    `🪑 *Table Booking — Saima Village Inn*\n\n`+
+    `👤 ${name}\n📞 ${phone}\n📅 ${date} at ${time}\n👥 ${guests} guest(s)\n📝 ${note||'None'}`
+  );
+  window.open(`https://wa.me/254727749187?text=${msg}`,'_blank');
+
+  const bookings = JSON.parse(localStorage.getItem('svi_bookings')||'[]');
+  bookings.push({name,phone,date,time,guests,note,ts:Date.now()});
+  localStorage.setItem('svi_bookings',JSON.stringify(bookings));
+
+  document.getElementById('bkForm').style.display='none';
+  document.getElementById('bkSuccess').style.display='block';
+}
+
+/* ── CONTACT FORM ────────────────────────────────────── */
+function submitContact(){
+  const name = document.getElementById('cfName').value.trim();
+  const contact = document.getElementById('cfContact').value.trim();
+  const msg2 = document.getElementById('cfMsg').value.trim();
+  if(!name||!msg2){alert('Please enter your name and message.');return;}
+  const wa = encodeURIComponent(`💬 *Website Message*\nFrom: ${name}\nContact: ${contact||'—'}\n\n${msg2}`);
+  window.open(`https://wa.me/254727749187?text=${wa}`,'_blank');
+  document.getElementById('cfOk').style.display='block';
+  document.getElementById('cfName').value='';
+  document.getElementById('cfContact').value='';
+  document.getElementById('cfMsg').value='';
+}
+
+/* ── SCROLL ANIMATIONS ───────────────────────────────── */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
+},{threshold:0.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+/* ── INIT ────────────────────────────────────────────── */
+renderCart();
+</script>
+</body>
+</html>
